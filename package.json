@@ -2,18 +2,26 @@
   "name": "chat-app",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gmunker/node-chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gmunker/node-chat-app/issues"
+  },
+  "homepage": "https://github.com/Gmunker/node-chat-app#readme",
   "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  },
-  "scripts": {
-    "start": "npm ./src/app.js",
-    "dev": "nodemon ./src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
