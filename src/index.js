@@ -17,9 +17,18 @@ let count = 0
 io.on('connection', (socket) => {
   console.log('New WebSocket Connection')
   socket.emit('welcomeMessage', "Welcome")
+  socket.broadcast.emit('messageRecieved', 'New user has joined the chat')
 
   socket.on('messageSend', (message) => {
     io.emit('messageRecieved', message)
+  })
+
+  socket.on('disconnect', () => {
+    io.emit('messageRecieved', "User has disconnected")
+  })
+
+  socket.on('sendLocation', (loc) => {
+    io.emit('messageRecieved', `https://www.google.com/maps?q=${loc.lat},${loc.lon}`)
   })
 })
 
