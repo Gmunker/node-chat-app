@@ -10,8 +10,10 @@ const form1_button = document.querySelector('#form1')
 form1_button.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  const form1_input = e.target.elements.form1_input
-  socket.emit('messageSend', form1_input.value)
+  const message = e.target.elements.form1_input.value
+  socket.emit('messageSend', message, (message) => {
+    console.log(`The message was ${message}`)
+  })
 })
 
 socket.on('messageRecieved', (message) => {
